@@ -268,47 +268,57 @@
 
     position: absolute;
 
-    width: 70px;
-    height: 70px;
+    width: 68px;
+    height: 82px;
 
     left: 50%;
     top: 50%;
 
-    transform:
-        translate(-50%, -50%)
-        rotate(-45deg);
-
-    border-radius:
-        55% 55% 55% 8%;
+    transform: translate(-50%, -50%);
 
     background:
         radial-gradient(
-            circle at 30% 25%,
-            #ff5b5b 0%,
-            #d40000 18%,
-            #8b0000 48%,
-            #3b0000 100%
+            circle at 35% 30%,
+            #ff6b6b 0%,
+            #e00000 20%,
+            #9b0000 55%,
+            #430000 100%
         );
 
-    border: 1px solid #c40000;
+    /*
+       ФОРМА КАПЛИ:
+       острый верх + округлый низ
+    */
 
-    box-shadow:
+    clip-path: polygon(
+        50% 0%,
+        61% 15%,
+        74% 32%,
+        87% 52%,
+        94% 68%,
+        93% 79%,
+        87% 89%,
+        76% 96%,
+        63% 100%,
+        50% 101%,
+        37% 100%,
+        24% 96%,
+        13% 89%,
+        7% 79%,
+        6% 68%,
+        13% 52%,
+        26% 32%,
+        39% 15%
+    );
 
-        inset
-        8px 8px 15px rgba(255,255,255,0.12),
-
-        inset
-        -10px -12px 18px rgba(0,0,0,0.65),
-
-        0 8px 12px rgba(0,0,0,0.65),
-
-        0 0 18px rgba(180,0,0,0.45);
+    filter:
+        drop-shadow(0 8px 8px rgba(0,0,0,0.65))
+        drop-shadow(0 0 15px rgba(180,0,0,0.45));
 
     z-index: -1;
 
     transition: 0.35s;
 }
-
 
 /* БЛИК НА КАПЛЕ */
 
@@ -317,26 +327,28 @@
 
     position: absolute;
 
-    width: 14px;
-    height: 22px;
+    width: 12px;
+    height: 27px;
 
-    left: calc(50% - 21px);
-    top: calc(50% - 25px);
+    left: calc(50% - 18px);
+    top: calc(50% - 27px);
 
     border-radius: 50%;
 
     background:
         linear-gradient(
             180deg,
-            rgba(255,255,255,0.7),
+            rgba(255,255,255,0.75),
             rgba(255,255,255,0)
         );
 
-    transform: rotate(-45deg);
+    transform: rotate(25deg);
 
-    opacity: 0.7;
+    opacity: 0.75;
 
     z-index: -1;
+
+    transition: 0.35s;
 }
 
 
@@ -355,34 +367,23 @@
 
 
 .social:hover::before {
+    transform:
+        translate(-50%, -50%)
+        scale(1.12);
 
     background:
         radial-gradient(
-            circle at 28% 22%,
-            #ff7777 0%,
-            #ef0000 18%,
-            #a50000 50%,
-            #480000 100%
+            circle at 35% 28%,
+            #ff8585 0%,
+            #f00000 20%,
+            #a80000 55%,
+            #450000 100%
         );
 
-    box-shadow:
-
-        inset
-        8px 8px 15px rgba(255,255,255,0.16),
-
-        inset
-        -10px -12px 18px rgba(0,0,0,0.7),
-
-        0 8px 15px rgba(0,0,0,0.7),
-
-        0 0 35px rgba(220,0,0,0.8);
-
-    transform:
-        translate(-50%, -50%)
-        rotate(-45deg)
-        scale(1.12);
+    filter:
+        drop-shadow(0 10px 10px rgba(0,0,0,0.7))
+        drop-shadow(0 0 30px rgba(230,0,0,0.85));
 }
-
         /* =========================
            SECTIONS
         ========================= */
