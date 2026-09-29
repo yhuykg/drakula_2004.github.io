@@ -1,1234 +1,1136 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>drakula_2004 | Streamer</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(130, 0, 0, 0.28),
-                    transparent 35%
-                ),
-                #050505;
-
-            color: #ffffff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-
-            background:
-                radial-gradient(
-                    circle at 15% 25%,
-                    rgba(180, 0, 0, 0.07),
-                    transparent 25%
-                ),
-
-                radial-gradient(
-                    circle at 85% 70%,
-                    rgba(180, 0, 0, 0.07),
-                    transparent 25%
-                );
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAXY SOLCH</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-            z-index: -1;
-        }
-
-        .container {
-            width: min(1050px, 92%);
-            margin: auto;
-        }
+<style>
 
-        /* =========================
-           HEADER
-        ========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.68),
+            rgba(0,0,0,0.82)
+        ),
+        radial-gradient(
+            circle at top,
+            #302500 0%,
+            #111 45%,
+            #050505 100%
+        );
+
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 20px 12px 40px;
+}
+
+.site {
+    width: 100%;
+    max-width: 480px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    color: white;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #ffd900,
+        0 0 22px rgba(255,190,0,.5);
+}
 
-        header {
-            text-align: center;
-            padding: 80px 20px 50px;
-        }
+.subtitle {
+    margin-top: 9px;
+
+    font-size: 11px;
+    font-weight: 700;
 
-        .avatar {
-            width: 155px;
-            height: 155px;
+    color: #999;
 
-            margin: 0 auto 25px;
+    letter-spacing: 1px;
+}
 
-            border-radius: 50%;
+.subtitle span {
+    color: #ffd21c;
+}
 
-            background:
-                radial-gradient(
-                    circle,
-                    #300000,
-                    #080808 70%
-                );
+/* =========================
+   PAGES
+========================= */
 
-            border: 2px solid #8d0000;
+.page {
+    display: none;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.page.active {
+    display: block;
+}
 
-            font-size: 60px;
+/* =========================
+   MAIN IMAGE
+========================= */
 
-            box-shadow:
-                0 0 30px rgba(170, 0, 0, 0.45),
-                inset 0 0 35px rgba(180, 0, 0, 0.15);
+.banner {
+    width: 100%;
+    height: 105px;
 
-            animation: vampirePulse 4s infinite;
-        }
+    border: 2px solid #c9b653;
+    border-radius: 14px;
 
-        @keyframes vampirePulse {
+    overflow: hidden;
 
-            0%, 100% {
-                box-shadow:
-                    0 0 30px rgba(170, 0, 0, 0.4),
-                    inset 0 0 35px rgba(180, 0, 0, 0.15);
-            }
+    margin-bottom: 18px;
 
-            50% {
-                box-shadow:
-                    0 0 55px rgba(210, 0, 0, 0.65),
-                    inset 0 0 45px rgba(180, 0, 0, 0.25);
-            }
+    background:
+        linear-gradient(
+            90deg,
+            #171717,
+            #292929,
+            #111
+        );
 
-        }
+    box-shadow:
+        0 0 12px rgba(255,210,0,.12),
+        inset 0 0 15px rgba(0,0,0,.8);
+}
 
-        h1 {
-            font-family: 'Cinzel', serif;
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-            font-size: clamp(
-                38px,
-                7vw,
-                70px
-            );
+/* =========================
+   BUTTONS
+========================= */
 
-            letter-spacing: 5px;
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
 
-            text-transform: uppercase;
+.btn {
+    width: 100%;
+    min-height: 62px;
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #ffffff,
-                    #b00000
-                );
+    border: 2px solid #a9994b;
+    border-radius: 13px;
 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    background:
+        linear-gradient(
+            145deg,
+            #252525,
+            #101010
+        );
 
-        .subtitle {
-            margin-top: 12px;
+    color: white;
 
-            color: #888;
+    text-decoration: none;
 
-            font-size: 13px;
+    display: flex;
+    align-items: center;
 
-            letter-spacing: 5px;
+    padding: 0 20px;
 
-            text-transform: uppercase;
-        }
+    font-size: 15px;
+    font-weight: 800;
 
-        /* =========================
-           LIVE BUTTON
-        ========================= */
+    letter-spacing: .4px;
 
-        .live-button {
-            display: inline-flex;
+    box-shadow:
+        inset 0 0 10px rgba(255,255,255,.03),
+        0 4px 10px rgba(0,0,0,.5);
 
-            align-items: center;
-            gap: 10px;
+    transition: .2s;
+}
 
-            margin-top: 30px;
+.btn:hover {
+    transform: translateY(-2px);
 
-            padding: 15px 32px;
+    border-color: #ffd91a;
 
-            color: #ffffff;
+    box-shadow:
+        0 0 15px rgba(255,215,0,.25),
+        inset 0 0 15px rgba(255,215,0,.04);
+}
 
-            text-decoration: none;
+.icon {
+    width: 38px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #8b0000,
-                    #420000
-                );
+    font-size: 22px;
 
-            border: 1px solid #c00000;
+    text-align: center;
 
-            border-radius: 8px;
+    margin-right: 12px;
+}
 
-            font-weight: 700;
+.btn-text {
+    flex: 1;
+}
 
-            letter-spacing: 1px;
+.arrow {
+    color: #d4bb43;
+    font-size: 20px;
+}
 
-            box-shadow:
-                0 0 25px rgba(160, 0, 0, 0.3);
+/* =========================
+   TWO BUTTONS
+========================= */
 
-            transition: 0.3s;
-        }
+.two-buttons {
+    display: grid;
 
-        .live-button:hover {
-            transform: translateY(-3px);
+    grid-template-columns: 1fr 1fr;
 
-            box-shadow:
-                0 0 40px rgba(200, 0, 0, 0.65);
-        }
+    gap: 10px;
+}
 
-        .live-dot {
-            width: 9px;
-            height: 9px;
+.two-buttons .btn {
+    min-height: 62px;
 
-            background: #ff2020;
+    padding: 0 10px;
 
-            border-radius: 50%;
+    justify-content: center;
 
-            box-shadow:
-                0 0 10px red;
-        }
+    text-align: center;
+}
 
-        /* =========================
-           SOCIALS
-        ========================= */
+.two-buttons .icon {
+    margin-right: 7px;
+}
 
-        .socials {
-            display: flex;
+/* =========================
+   SECTION TITLE
+========================= */
 
-            justify-content: center;
+.section-title {
+    margin: 19px 2px 9px;
 
-            flex-wrap: wrap;
+    color: #d5bd42;
 
-            gap: 10px;
+    font-size: 11px;
 
-            margin-top: 30px;
-        }
+    font-weight: 900;
 
-        .social {
-    position: relative;
+    letter-spacing: 2px;
 
-    width: 145px;
-    height: 75px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+.back {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 11px;
+
+    border: 2px solid #a9994b;
+
+    background: #161616;
+
+    color: white;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    transition: .2s;
+}
+
+.back:hover {
+    border-color: #ffd900;
+
+    color: #ffd900;
+}
+
+.page-title {
+    font-size: 23px;
+
+    font-weight: 900;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+    text-align: center;
+
+    margin-bottom: 18px;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    border: 3px solid #c9b653;
+
+    background:
+        radial-gradient(
+            circle,
+            #333,
+            #080808
+        );
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    color: #ffffff;
+    font-size: 35px;
 
-    text-decoration: none;
+    overflow: hidden;
 
-    font-weight: 700;
-    font-size: 14px;
-
-    letter-spacing: 0.5px;
-
-    z-index: 1;
-
-    transition: 0.35s;
-
-    filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.5));
+    box-shadow:
+        0 0 18px rgba(255,215,0,.2);
 }
 
+.avatar img {
+    width: 100%;
+    height: 100%;
 
-/* САМА КАПЛЯ */
-
-.social::before {
-    content: "";
-
-    position: absolute;
-
-    width: 68px;
-    height: 82px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #ff6b6b 0%,
-            #e00000 20%,
-            #9b0000 55%,
-            #430000 100%
-        );
-
-    /*
-       ФОРМА КАПЛИ:
-       острый верх + округлый низ
-    */
-
-    clip-path: polygon(
-        50% 0%,
-        61% 15%,
-        74% 32%,
-        87% 52%,
-        94% 68%,
-        93% 79%,
-        87% 89%,
-        76% 96%,
-        63% 100%,
-        50% 101%,
-        37% 100%,
-        24% 96%,
-        13% 89%,
-        7% 79%,
-        6% 68%,
-        13% 52%,
-        26% 32%,
-        39% 15%
-    );
-
-    filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.65))
-        drop-shadow(0 0 15px rgba(180,0,0,0.45));
-
-    z-index: -1;
-
-    transition: 0.35s;
+    object-fit: cover;
 }
 
-    filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.65))
-        drop-shadow(0 0 15px rgba(180,0,0,0.45));
+/* =========================
+   FOOTER
+========================= */
 
-    z-index: -1;
+.footer {
+    text-align: center;
 
-    transition: 0.35s;
+    margin-top: 25px;
+
+    color: #555;
+
+    font-size: 9px;
 }
 
-/* БЛИК НА КАПЛЕ */
+/* =========================
+   MOBILE
+========================= */
 
-.social::after {
-    content: "";
+@media(max-width:380px) {
 
-    position: absolute;
+    body {
+        padding: 15px 9px 30px;
+    }
 
-    width: 12px;
-    height: 27px;
+    .logo {
+        font-size: 29px;
+    }
 
-    left: calc(50% - 18px);
-    top: calc(50% - 27px);
+    .btn {
+        min-height: 58px;
+        font-size: 13px;
+    }
 
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,0.75),
-            rgba(255,255,255,0)
-        );
-
-    transform: rotate(25deg);
-
-    opacity: 0.75;
-
-    z-index: -1;
-
-    transition: 0.35s;
+    .banner {
+        height: 90px;
+    }
 }
 
-/* НАВЕДЕНИЕ */
-
-.social:hover {
-    color: #ffffff;
-
-    transform:
-        translateY(-7px)
-        scale(1.05);
-
-    filter:
-        drop-shadow(0 12px 12px rgba(0,0,0,0.6));
-}
-
-
-.social:hover::before {
-    transform:
-        translate(-50%, -50%)
-        scale(1.12);
-
-    background:
-        radial-gradient(
-            circle at 35% 28%,
-            #ff8585 0%,
-            #f00000 20%,
-            #a80000 55%,
-            #450000 100%
-        );
-
-    filter:
-        drop-shadow(0 10px 10px rgba(0,0,0,0.7))
-        drop-shadow(0 0 30px rgba(230,0,0,0.85));
-}
-        
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 70px 0;
-        }
-
-        .section-title {
-            text-align: center;
-
-            font-family: 'Cinzel', serif;
-
-            font-size: 30px;
-
-            margin-bottom: 35px;
-
-            letter-spacing: 2px;
-        }
-
-        .section-title span {
-            color: #a40000;
-        }
-
-        /* =========================
-           DONATE
-        ========================= */
-
-        .donate {
-            max-width: 650px;
-
-            margin: auto;
-
-            padding: 40px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(130,0,0,0.12),
-                    rgba(255,255,255,0.02)
-                );
-
-            border: 1px solid #480000;
-
-            border-radius: 14px;
-
-            box-shadow:
-                0 0 40px rgba(100,0,0,0.12);
-        }
-
-        .donate p {
-            color: #999;
-
-            margin-bottom: 25px;
-
-            line-height: 1.6;
-        }
-
-        .donate-button {
-            display: inline-block;
-
-            padding: 14px 30px;
-
-            color: white;
-
-            text-decoration: none;
-
-            background: #8c0000;
-
-            border-radius: 7px;
-
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        .donate-button:hover {
-            background: #bd0000;
-
-            box-shadow:
-                0 0 25px rgba(200,0,0,0.4);
-        }
-
-        /* =========================
-           SETUP
-        ========================= */
-
-        .setup-category {
-            margin-bottom: 45px;
-        }
-
-        .category-title {
-            font-family: 'Cinzel', serif;
-
-            color: #a80000;
-
-            font-size: 21px;
-
-            margin-bottom: 20px;
-
-            text-align: center;
-
-            letter-spacing: 2px;
-        }
-
-        .setup-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(220px, 1fr)
-                );
-
-            gap: 16px;
-        }
-
-        .setup-card {
-            display: block;
-
-            padding: 25px;
-
-            color: white;
-
-            text-decoration: none;
-
-            background:
-                rgba(255,255,255,0.025);
-
-            border: 1px solid #242424;
-
-            border-radius: 10px;
-
-            transition: 0.3s;
-        }
-
-        .setup-card:hover {
-            transform: translateY(-5px);
-
-            border-color: #750000;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(120,0,0,0.14),
-                    rgba(255,255,255,0.025)
-                );
-
-            box-shadow:
-                0 10px 30px rgba(100,0,0,0.12);
-        }
-
-        .setup-icon {
-            font-size: 30px;
-
-            margin-bottom: 15px;
-        }
-
-        .setup-card h3 {
-            margin-bottom: 8px;
-
-            font-size: 17px;
-        }
-
-        .setup-card p {
-            color: #777;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-        }
-
-        /* =========================
-           PC SPECS
-        ========================= */
-
-        .pc-box {
-            max-width: 850px;
-
-            margin: auto;
-
-            padding: 35px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(120,0,0,0.08),
-                    rgba(255,255,255,0.02)
-                );
-
-            border: 1px solid #2d0909;
-
-            border-radius: 14px;
-        }
-
-        .pc-spec {
-            display: flex;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            padding: 16px 0;
-
-            border-bottom: 1px solid #1e1e1e;
-        }
-
-        .pc-spec:last-child {
-            border-bottom: none;
-        }
-
-        .pc-spec span:first-child {
-            color: #777;
-        }
-
-        .pc-spec span:last-child {
-            color: #eee;
-
-            text-align: right;
-
-            font-weight: 600;
-        }
-
-        /* =========================
-           SCHEDULE
-        ========================= */
-
-        .schedule {
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(150px, 1fr)
-                );
-
-            gap: 12px;
-        }
-
-        .day {
-            text-align: center;
-
-            padding: 25px 15px;
-
-            background:
-                rgba(255,255,255,0.025);
-
-            border: 1px solid #242424;
-
-            border-radius: 10px;
-        }
-
-        .day strong {
-            display: block;
-
-            font-family: 'Cinzel', serif;
-
-            color: #b00000;
-
-            margin-bottom: 8px;
-        }
-
-        .day span {
-            color: #999;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 50px 20px;
-
-            text-align: center;
-
-            color: #555;
-
-            border-top: 1px solid #181818;
-
-            font-size: 13px;
-        }
-
-        footer strong {
-            color: #800000;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            header {
-                padding-top: 55px;
-            }
-
-            .avatar {
-                width: 120px;
-                height: 120px;
-
-                font-size: 45px;
-            }
-
-            .socials {
-                gap: 7px;
-            }
-
-            .social {
-                font-size: 13px;
-
-                padding: 9px 12px;
-            }
-
-            .donate {
-                padding: 28px 20px;
-            }
-
-            .pc-box {
-                padding: 20px;
-            }
-
-            .pc-spec {
-                flex-direction: column;
-
-                gap: 5px;
-            }
-
-            .pc-spec span:last-child {
-                text-align: left;
-            }
-
-            section {
-                padding: 50px 0;
-            }
-
-        }
-
-    </style>
+</style>
 </head>
-
 
 <body>
 
+<div class="site">
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ==================================================
+     MAIN PAGE
+================================================== -->
 
-<header>
+<section id="home" class="page active">
 
-    <div class="container">
+    <div class="header">
 
-        <div class="avatar">
-            🧛
+        <div class="logo">
+            MAXY SOLCH
         </div>
-
-        <h1>drakula_2004</h1>
 
         <div class="subtitle">
-            Streamer • Gamer • Live
-        </div>
-
-
-        <!-- TWITCH -->
-
-        <a
-            class="live-button"
-            href="https://twitch.tv/drakula_2004/about"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-
-            <span class="live-dot"></span>
-
-            WATCH LIVE
-
-        </a>
-
-
-        <!-- SOCIAL MEDIA -->
-
-        <div class="socials">
-
-
-            <a
-                class="social"
-                href="https://t.me/+x-T5ghI-FHw0NTQy"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Telegram
-            </a>
-
-
-            <a
-                class="social"
-                href="https://www.instagram.com/graff_drakul4"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Instagram
-            </a>
-
-
-            <a
-                class="social"
-                href="https://www.tiktok.com/@graff_drakul4"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                TikTok
-            </a>
-
-
-            <a
-                class="social"
-                href="https://twitch.tv/drakula_2004/about"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Twitch
-            </a>
-
-
+            🟡 БУСТ CS2 <span>(В ТЕЛЕГЕ)</span>
         </div>
 
     </div>
 
-</header>
+
+    <!-- КАРТИНКА -->
+    <div class="banner">
+
+        <!-- ПОТОМ СЮДА МОЖНО ПОСТАВИТЬ ТВОЮ КАРТИНКУ -->
+        <img src="banner.jpg" alt="MAXY SOLCH">
+
+    </div>
 
 
+    <div class="buttons">
 
-<main class="container">
+        <!-- DONATE -->
 
+        <a href="#donate" class="btn">
 
-    <!-- =========================
-         DONATE
-    ========================= -->
+            <div class="icon">💰</div>
 
-    <section>
+            <div class="btn-text">
+                ЗАДОНАТИТЬ
+            </div>
 
-        <h2 class="section-title">
-            <span>🩸</span>
-            SUPPORT THE STREAM
-        </h2>
+            <div class="arrow">
+                ›
+            </div>
 
-
-        <div class="donate">
-
-            <p>
-                Если тебе нравится контент и ты хочешь
-                поддержать стрим — здесь можно будет
-                оставить донат.
-            </p>
+        </a>
 
 
-            <!--
-                ССЫЛКУ НА ДОНАТ ДОБАВИМ ПОЗЖЕ
-            -->
+        <!-- SHOP -->
 
-            <a
-                class="donate-button"
-                href="#"
-            >
-                💳 DONATE
+        <a href="#shop" class="btn">
+
+            <div class="icon">🛒</div>
+
+            <div class="btn-text">
+                МАГАЗИНЧИК
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- TWO BUTTONS -->
+
+        <div class="two-buttons">
+
+            <a href="#upgrader" class="btn">
+
+                <div class="icon">⬆️</div>
+
+                <div class="btn-text">
+                    UPGRADER
+                </div>
+
+            </a>
+
+
+            <a href="#giveaways" class="btn">
+
+                <div class="icon">⭐</div>
+
+                <div class="btn-text">
+                    РОЗЫГРЫШИ
+                </div>
+
             </a>
 
         </div>
 
-    </section>
 
-
-
-    <!-- =========================
-         PC
-    ========================= -->
-
-    <section>
-
-        <h2 class="section-title">
-            <span>💻</span>
-            PC BUILD
-        </h2>
-
-
-        <div class="pc-box">
-
-
-            <div class="pc-spec">
-
-                <span>Case</span>
-
-                <span>GameMax Infinity</span>
-
-            </div>
-
-
-            <div class="pc-spec">
-
-                <span>CPU</span>
-
-                <span>AMD Ryzen 7 8700F</span>
-
-            </div>
-
-
-            <div class="pc-spec">
-
-                <span>GPU</span>
-
-                <span>NVIDIA GeForce RTX 4070 SUPER</span>
-
-            </div>
-
-
-            <div class="pc-spec">
-
-                <span>RAM</span>
-
-                <span>32 GB DDR5 6000 MHz Venom</span>
-
-            </div>
-
-
-            <div class="pc-spec">
-
-                <span>Motherboard</span>
-
-                <span>MSI B650M</span>
-
-            </div>
-
-
+        <div class="section-title">
+            СОЦСЕТИ
         </div>
 
-    </section>
 
+        <!-- SOCIALS -->
 
+        <a href="#socials" class="btn">
 
-    <!-- =========================
-         DEVICES
-    ========================= -->
+            <div class="icon">🌐</div>
 
-    <section>
+            <div class="btn-text">
+                ВСЕ СОЦСЕТИ
+            </div>
 
-        <h2 class="section-title">
-            <span>🎮</span>
-            MY SETUP
-        </h2>
+            <div class="arrow">
+                ›
+            </div>
 
+        </a>
 
-        <div class="setup-grid">
 
-
-            <!-- MONITOR -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    🖥️
-                </div>
-
-                <h3>
-                    Monitor
-                </h3>
-
-                <p>
-                    Samsung Odyssey G50D
-                </p>
-
-            </a>
-
-
-
-            <!-- MOUSE -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    🖱️
-                </div>
-
-                <h3>
-                    Mouse
-                </h3>
-
-                <p>
-                    Logitech G Pro X Superlight 2 DEX
-                </p>
-
-            </a>
-
-
-
-            <!-- MOUSEPAD -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    ▰
-                </div>
-
-                <h3>
-                    Mousepad
-                </h3>
-
-                <p>
-                    Artisan
-                </p>
-
-            </a>
-
-
-
-            <!-- KEYBOARD -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    ⌨️
-                </div>
-
-                <h3>
-                    Keyboard
-                </h3>
-
-                <p>
-                    Logitech G Pro X TKL
-                </p>
-
-            </a>
-
-
-
-            <!-- HEADPHONES -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    🎧
-                </div>
-
-                <h3>
-                    Headphones
-                </h3>
-
-                <p>
-                    Logitech G Pro X 2
-                </p>
-
-            </a>
-
-
-
-            <!-- MICROPHONE -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    🎙️
-                </div>
-
-                <h3>
-                    Microphone
-                </h3>
-
-                <p>
-                    Shure MV7
-                </p>
-
-            </a>
-
-
-
-            <!-- WEBCAM -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    📷
-                </div>
-
-                <h3>
-                    Web Camera
-                </h3>
-
-                <p>
-                    Logitech StreamCam
-                </p>
-
-            </a>
-
-
-
-            <!-- CHAIR -->
-
-            <a
-                class="setup-card"
-                href="#"
-            >
-
-                <div class="setup-icon">
-                    🪑
-                </div>
-
-                <h3>
-                    Throne
-                </h3>
-
-                <p>
-                    Hell's
-                </p>
-
-            </a>
-
-
+        <div class="section-title">
+            ЕЩЁ
         </div>
 
-    </section>
 
+        <a href="#setup" class="btn">
 
+            <div class="icon">💻</div>
 
-    <!-- =========================
-         SCHEDULE
-    ========================= -->
-
-    <section>
-
-        <h2 class="section-title">
-            <span>🦇</span>
-            STREAM SCHEDULE
-        </h2>
-
-
-        <div class="schedule">
-
-
-            <div class="day">
-
-                <strong>
-                    MON
-                </strong>
-
-                <span>
-                    19:00
-                </span>
-
+            <div class="btn-text">
+                СЕТАП ПК
             </div>
 
-
-            <div class="day">
-
-                <strong>
-                    WED
-                </strong>
-
-                <span>
-                    19:00
-                </span>
-
+            <div class="arrow">
+                ›
             </div>
 
+        </a>
 
-            <div class="day">
 
-                <strong>
-                    FRI
-                </strong>
+        <a href="#config" class="btn">
 
-                <span>
-                    20:00
-                </span>
+            <div class="icon">⚙️</div>
 
+            <div class="btn-text">
+                КОНФИГ CS2
             </div>
 
-
-            <div class="day">
-
-                <strong>
-                    SUN
-                </strong>
-
-                <span>
-                    19:00
-                </span>
-
+            <div class="arrow">
+                ›
             </div>
 
+        </a>
 
+    </div>
+
+
+    <div class="footer">
+        © 2026 MAXY SOLCH
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SOCIALS PAGE
+================================================== -->
+
+<section id="socials" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            СОЦСЕТИ
         </div>
 
-    </section>
+    </div>
 
 
-</main>
+    <div class="buttons">
+
+        <a
+            href="https://twitch.tv/drakula_2004"
+            target="_blank"
+            class="btn"
+        >
+            <div class="icon">🟣</div>
+            <div class="btn-text">TWITCH</div>
+            <div class="arrow">↗</div>
+        </a>
 
 
+        <a
+            href="https://www.tiktok.com/@graff_drakul4"
+            target="_blank"
+            class="btn"
+        >
+            <div class="icon">♪</div>
+            <div class="btn-text">TIKTOK</div>
+            <div class="arrow">↗</div>
+        </a>
 
-<!-- =========================
-     FOOTER
-========================= -->
 
-<footer>
+        <a
+            href="https://www.instagram.com/graff_drakul4"
+            target="_blank"
+            class="btn"
+        >
+            <div class="icon">◎</div>
+            <div class="btn-text">INSTAGRAM</div>
+            <div class="arrow">↗</div>
+        </a>
 
-    © 2026
-    <strong>drakula_2004</strong>
 
-    <br><br>
+        <a
+            href="https://t.me/+x-T5ghI-FHw0NTQy"
+            target="_blank"
+            class="btn"
+        >
+            <div class="icon">✈</div>
+            <div class="btn-text">TELEGRAM</div>
+            <div class="arrow">↗</div>
+        </a>
 
-    Welcome to the dark side 🩸
 
-</footer>
+        <!-- ПОТОМ МОЖНО ДОБАВИТЬ -->
 
+        <a href="#" class="btn">
+
+            <div class="icon">▶</div>
+            <div class="btn-text">YOUTUBE</div>
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">K</div>
+            <div class="btn-text">KICK</div>
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🎮</div>
+            <div class="btn-text">DISCORD</div>
+            <div class="arrow">↗</div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     DONATE PAGE
+================================================== -->
+
+<section id="donate" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            ДОНАТ
+        </div>
+
+    </div>
+
+
+    <div class="profile">
+
+        <div class="avatar">
+            💰
+        </div>
+
+        <div>
+            Поддержать MAXY SOLCH
+        </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <a href="#" class="btn">
+
+            <div class="icon">💳</div>
+
+            <div class="btn-text">
+                БАНКОВСКАЯ КАРТА
+            </div>
+
+            <div class="arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">💰</div>
+
+            <div class="btn-text">
+                DONATIONALERTS
+            </div>
+
+            <div class="arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">₿</div>
+
+            <div class="btn-text">
+                CRYPTO
+            </div>
+
+            <div class="arrow">
+                ↗
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SHOP
+================================================== -->
+
+<section id="shop" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            МАГАЗИНЧИК
+        </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <a href="#" class="btn">
+
+            <div class="icon">👕</div>
+
+            <div class="btn-text">
+                МЕРЧ
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🎁</div>
+
+            <div class="btn-text">
+                ТОВАРЫ
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🛒</div>
+
+            <div class="btn-text">
+                МАГАЗИН
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     UPGRADER
+================================================== -->
+
+<section id="upgrader" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            UPGRADER
+        </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <a href="#" class="btn">
+
+            <div class="icon">⬆️</div>
+
+            <div class="btn-text">
+                ОТКРЫТЬ UPGRADER
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🎁</div>
+
+            <div class="btn-text">
+                БОНУС
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     GIVEAWAYS
+================================================== -->
+
+<section id="giveaways" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            РОЗЫГРЫШИ
+        </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <a href="#" class="btn">
+
+            <div class="icon">⭐</div>
+
+            <div class="btn-text">
+                АКТИВНЫЕ РОЗЫГРЫШИ
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">✈</div>
+
+            <div class="btn-text">
+                РОЗЫГРЫШИ В TELEGRAM
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     SETUP
+================================================== -->
+
+<section id="setup" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            СЕТАП ПК
+        </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <a href="#" class="btn">
+
+            <div class="icon">🖥</div>
+
+            <div class="btn-text">
+                МОНИТОР
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🖱</div>
+
+            <div class="btn-text">
+                МЫШЬ
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">⌨</div>
+
+            <div class="btn-text">
+                КЛАВИАТУРА
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🎧</div>
+
+            <div class="btn-text">
+                НАУШНИКИ
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🎙</div>
+
+            <div class="btn-text">
+                МИКРОФОН
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">📷</div>
+
+            <div class="btn-text">
+                WEBCAM
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🖥</div>
+
+            <div class="btn-text">
+                ПК
+            </div>
+
+            <div class="arrow">↗</div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     CONFIG
+================================================== -->
+
+<section id="config" class="page">
+
+    <div class="page-header">
+
+        <a href="#home" class="back">
+            ←
+        </a>
+
+        <div class="page-title">
+            КОНФИГ CS2
+        </div>
+
+    </div>
+
+
+    <div class="buttons">
+
+        <a href="#" class="btn">
+
+            <div class="icon">⚙️</div>
+
+            <div class="btn-text">
+                СКАЧАТЬ КОНФИГ
+            </div>
+
+            <div class="arrow">↓</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🎯</div>
+
+            <div class="btn-text">
+                НАСТРОЙКИ ПРИЦЕЛА
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a href="#" class="btn">
+
+            <div class="icon">🖱</div>
+
+            <div class="btn-text">
+                SENSITIVITY
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ
+========================================== */
+
+function showPage() {
+
+    let page =
+        window.location.hash.substring(1);
+
+    if (!page) {
+        page = "home";
+    }
+
+    document
+        .querySelectorAll(".page")
+        .forEach(function(section) {
+
+            section.classList.remove("active");
+
+        });
+
+
+    let current =
+        document.getElementById(page);
+
+
+    if (current) {
+
+        current.classList.add("active");
+
+    } else {
+
+        document
+            .getElementById("home")
+            .classList.add("active");
+
+    }
+
+
+    window.scrollTo(0, 0);
+}
+
+
+window.addEventListener(
+    "hashchange",
+    showPage
+);
+
+
+showPage();
+
+</script>
 
 </body>
 </html>
